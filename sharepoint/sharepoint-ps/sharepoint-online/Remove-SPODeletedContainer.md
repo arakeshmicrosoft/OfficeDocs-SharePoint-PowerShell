@@ -17,7 +17,10 @@ ms.reviewer:
 
 ## SYNOPSIS
 
-Permanently deletes the specified SharePoint Embedded container from the recycle bin. This action cannot be undone.
+Permanently deletes the specified SharePoint Embedded container from the deleted container collection if the Container has no further retention policies applied to it. This action cannot be undone.
+
+> [!WARNING]
+> Deleting a container may cause unexpected issues for the SharePoint Embedded application the Container belongs to and may interrupt usage of the application.
 
 ## SYNTAX
 
@@ -29,65 +32,29 @@ Permanently deletes the specified SharePoint Embedded container from the recycle
 Remove-SPODeletedContainer [–Identity <ContainerID>] [<CommonParameters>]
 ```
 
-### ParamSet2
-```powershell
-Remove-SPODeletedContainer [–Identity <ContainerURL>] [<CommonParameters>]
-```
-
-### ParamSet3
-```powershell
-Remove-SPODeletedContainer [–Identity <ContainerSiteURL>] [<CommonParameters>]
-```
-
-
-
 ## DESCRIPTION
 
-The `Remove-SPODeletedContainer` cmdlet permanently removes a SharePoint Embedded deleted container from the Recycle Bin.
+The `Remove-SPODeletedContainer` cmdlet permanently removes a SharePoint Embedded deleted container from the deleted container collection.
 
-You must be a SharePoint Administrator or Global Administrator to run the cmdlet.
+You must be a SharePoint Administrator or Global Administrator to run the cmdlet. To get started using PowerShell to manage SharePoint Embedded, you have to [install](https://www.microsoft.com/en-us/download/details.aspx?id=35588) the SharePoint Online Management Shell and [connect to SharePoint Online](https://learn.microsoft.com/en-us/powershell/module/sharepoint-online/connect-sposervice?view=sharepoint-ps). 
 
-For permissions and the most current information about Windows PowerShell for SharePoint Online, see the online documentation at [Intro to SharePoint Online Management Shell](https://learn.microsoft.com/powershell/sharepoint/sharepoint-online/introduction-sharepoint-online-management-shell?view=sharepoint-ps).
-
-
-
+You need version 16.0.24211.12000 or higher to run the commands for SharePoint Embedded.
 
 ## EXAMPLES
 
 ### -----------------------EXAMPLE 1-----------------------------
 
 ```powershell
-Remove-SPODeletedContainer –Identity ADD_ID_HERE!!
+Remove-SPODeletedContainer –Identity b!66f5b2e-4cbd-4754-9ad3-8291c2c81ade
 ``````
-
-This example removes a SharePoint Embedded deleted container with the ContainerID from the Recycle Bin and deletes it permanently.
-
-
-### -----------------------EXAMPLE 2-----------------------------
-
-```powershell
-Remove-SPODeletedContainer –Identity ADD_URL_HERE!!
-``````
-
-This example removes a SharePoint Embedded deleted container with the ContainerURL from the Recycle Bin and deletes it permanently.
-
-
-### -----------------------EXAMPLE 1-----------------------------
-
-```powershell
-Remove-SPODeletedContainer –Identity ADD_SiteURL_HERE!!
-``````
-
-This example removes a SharePoint Embedded deleted container with the ContainerSiteURL from the Recycle Bin and deletes it permanently.
-
-
+This example removes a SharePoint Embedded deleted container with the ContainerID b!66f5b2e-4cbd-4754-9ad3-8291c2c81adefrom the deleted cointainer collection and deletes it permanently.
 
 ## PARAMETERS
 
 
 ### -Identity
 
-Specifies the `<ContainerID>`, `<ContainerURL>`, or `<ContainerSiteURL>` of the Container to be permanently deleted.
+Specifies the `<ContainerID>`of the Container to be permanently deleted.
  
 ```yaml
 Type: String
