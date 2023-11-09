@@ -66,6 +66,8 @@ You need to be a SharePoint Online administrator or Global Administrator to run 
 > OwningApplicationID for Microsoft Loop is a187e399-0c36-4b98-8f04-1edc167a0996
 
 > OwningApplicationID for Microsoft Designer is 5e2795e3-ce8c-4cfb-b302-35fe5cd01597
+
+> OwningApplicationID of other SharePoint repository services applications, use Get-SPOApplication command.
  
  
 <!-- > [!NOTE]  
@@ -81,11 +83,6 @@ Get-SPOContainer -OwningApplicationID 423poi45-jikl-9bnm-b302-1234ghy56789 | FT
 
 Example 1 returns a tabular list of containers created under SharePoint Embedded application  
 
-To retrieve containers for the Loop app, use OwningApplicationId: a187e399-0c36-4b98-8f04-1edc167a0996 
-
-To retrieve containers for the Designer app, use OwningApplicationId: 5e2795e3-ce8c-4cfb-b302-35fe5cd01597 
-
-To retrieve ApplicationID of other SharePoint Embedded applications registered your tenant, use Get-SPOApplication command. 
 
 ### -----------------------EXAMPLE 2-----------------------------
 
