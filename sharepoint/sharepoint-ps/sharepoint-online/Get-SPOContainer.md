@@ -15,7 +15,7 @@ ms.reviewer:
 
 ## SYNOPSIS
 
-Returns one or more SharePoint Embedded containers. 
+Returns one or more SharePoint repository services containers. 
 
 ## SYNTAX
 <!-- 
